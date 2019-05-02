@@ -39,5 +39,5 @@ if __name__ == "__main__":
     traincheck = TrainCheck()
     mqtt_opts = MqttOptions()
     with Hermes(mqtt_options=mqtt_opts) as h:
-        h.subscribe_intent("checkTrainStatus", intent_callback)
+        h.subscribe_intent("Alpha200:checkTrainStatus", intent_callback)
         h.start()
