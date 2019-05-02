@@ -1,5 +1,11 @@
 #/usr/bin/env bash -e
 
+# Copy config.ini.default if config.ini doesn't exist.
+if [ ! -e config.ini ]
+then
+    cp config.ini.default config.ini
+fi
+
 VENV=venv
 
 if [ ! -d "$VENV" ]
