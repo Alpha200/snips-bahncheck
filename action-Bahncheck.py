@@ -30,13 +30,13 @@ def read_configuration_file(configuration_file):
 
 
 def intent_callback(hermes, intent_message):
-    conf = read_configuration_file(CONFIG_INI)
-    result_sentence = traincheck.check_train(conf)
+    result_sentence = traincheck.check_train()
     hermes.publish_end_session(intent_message.session_id, result_sentence)
 
 
 if __name__ == "__main__":
-    traincheck = TrainCheck()
+    conf = read_configuration_file(CONFIG_INI)
+    traincheck = TrainCheck(conf['secret']['station_from'], conf['secret']['station_via'])
     mqtt_opts = MqttOptions()
     with Hermes(mqtt_options=mqtt_opts) as h:
         h.subscribe_intent("Alpha200:checkTrainStatus", intent_callback)
