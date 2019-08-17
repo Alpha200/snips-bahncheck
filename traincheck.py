@@ -3,6 +3,7 @@ import requests
 
 class TrainCheck:
     ARTICLE_MAP = dict(
+        ABR="der",
         S="die",
         RE="der",
         RB="die",
