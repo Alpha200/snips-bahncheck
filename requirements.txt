@@ -1,2 +1,2 @@
 requests
-hermes-python>=0.4.0
+hermes-python>=0.7.0

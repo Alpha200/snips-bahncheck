@@ -2,16 +2,17 @@ import requests
 
 
 class TrainCheck:
-    ARTICLE_MAP = dict(
-        ABR="der",
-        S="die",
-        RE="der",
-        RB="die",
-        EC="der",
-        IC="der",
-        ICE="der",
-        U="die"
-    )
+    ARTICLE_MAP = {
+        "ABR": "der",
+        "S": "die",
+        "RE": "der",
+        "RB": "die",
+        "EC": "der",
+        "IC": "der",
+        "ICE": "der",
+        "U": "die",
+        "Bus SEV": "der"
+    }
 
     def __init__(self, station_from, station_via):
         self.station_from = station_from
@@ -66,7 +67,10 @@ class TrainCheck:
                         departure['delayDeparture']
                     )
                 for qos_message in departure['messages']['qos']:
-                    result += qos_message['text']
+                    result += "{}. ".format(qos_message['text'])
+
+                if departure['platform'] != departure['scheduledPlatform']:
+                    result += "Heute von Gleis {}. ".format(departure['platform'])
             else:
                 result += "fällt aus. "
 

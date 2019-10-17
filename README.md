@@ -1,6 +1,6 @@
 # Snips-Bahncheck
 
-Mit diesem Skill kann man sich über [Snips.ai](https://snips.ai/) aktuelle Verspätungen der deutschen Bahn ansagen lassen.
+Mit dieser App kann man sich über [Snips.ai](https://snips.ai/) aktuelle Verspätungen der deutschen Bahn ansagen lassen.
 Als Quelle wird dazu [db-infoscreen](https://finalrewind.org/projects/db-fakedisplay/) verwendet.
 
 ## Parameter
